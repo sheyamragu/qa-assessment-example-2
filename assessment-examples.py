@@ -119,8 +119,9 @@ def five(chars):
     # <EXAMPLES>
 
     # six('hello world, how are you?', 12) → ['hello world,', 'how are you?']
-    # six('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 20) → ['Lorem Ipsum is', 'simply dummy text of', 'the printing and', 'typesetting', 'industry.']
-
+    # six('hello world, how are you?', 6) → ['hello', 'world,', 'how', 'are', 'you?']
+    # six('hello world, how are you?', 20) → ['hello world, how are', 'you?']
+    
 def six(paragraph, limit):
 
     words = paragraph.split()
