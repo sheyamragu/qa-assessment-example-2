@@ -129,19 +129,16 @@ def six(paragraph, limit):
     current_page = ''
     for word in words:
 
-        if current_page == '': new_text = word
-        else: new_text = f'{current_page} {word}'
+        new_text = f'{current_page} {word}'.lstrip()
 
-        if len(new_text) > limit:
+        if len(new_text) > limit and current_page != '':
+            pages.append(current_page)
+            current_page = word
 
-            if current_page != '': 
-                pages.append(current_page)
-
-            current_page = ''
-            new_text = word
-
-        current_page = new_text
+        else:
+            current_page = new_text
 
     pages.append(current_page)
 
     return pages
+    
