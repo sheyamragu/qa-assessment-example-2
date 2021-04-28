@@ -99,7 +99,7 @@ def four(number):
     # five('hello world!') → ' '
 
 def five(chars):
-    asc = 100000
+    asc = float('inf')
 
     for char in chars:
         asc1 = ord(char)
@@ -145,5 +145,3 @@ def six(paragraph, limit):
     pages.append(current_page)
 
     return pages
-
-print(six('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 20))
