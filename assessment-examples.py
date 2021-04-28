@@ -39,7 +39,7 @@ def two(total_seconds):
 
     # <EXAMPLES>
 
-    # three({'hello':'hola', 'thank you':'gracias'}) → {'hola':'hello', 'gracis':'thank you'}
+    # three({'hello':'hola', 'thank you':'gracias'}) → {'hola':'hello', 'gracias':'thank you'}
     # three({101:'Optimisation', 102:'Partial ODEs'}) → {'Optimisation':101, 'Partial ODEs':102}
 
     # <HINT>
@@ -68,7 +68,7 @@ def four(number):
 
     # <QUESTION 5>
 
-    # Given an string of characters, return the character with the lowest ASCII value
+    # Given a string of characters, return the character with the lowest ASCII value
 
     # <EXAMPLES>
 
