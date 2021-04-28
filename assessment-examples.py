@@ -78,3 +78,19 @@ def four(number):
 
 def five(chars):
     pass
+
+    # <QUESTION 6>
+
+    # Given a paragraph of text and an integer, break the paragraph into "pages" (a list of strings), where the
+    # length of each page is less than the given integer
+
+    # Don't break words up across pages!
+
+    # <EXAMPLES>
+
+    # six('hello world, how are you?', 12) → ['hello world,', 'how are you?']
+    # six('hello world, how are you?', 6) → ['hello', 'world,', 'how', 'are', 'you?']
+    # six('hello world, how are you?', 20) → ['hello world, how are', 'you?']
+    
+def six(paragraph, limit):
+    pass
