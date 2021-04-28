@@ -12,7 +12,10 @@
     # one("punctation, or something?", " ,?") → "punctuation__or_something_"
 
 def one(word, chars):
-    pass
+    for char in chars:
+        word = word.replace(char, '_')
+
+    return word
 
     # <QUESTION 2>
 
@@ -30,7 +33,17 @@ def one(word, chars):
     # There are 86,400 seconds in a day, and 3600 seconds in an hour
 
 def two(total_seconds):
-    pass
+
+    days = total_seconds//86400
+    total_seconds %= 86400
+
+    hours = total_seconds//3600
+    total_seconds %= 3600   
+
+    minutes = total_seconds//60
+    total_seconds %= 60   
+
+    return (days, hours, minutes, total_seconds)
 
     # <QUESTION 3>
 
@@ -39,7 +52,7 @@ def two(total_seconds):
 
     # <EXAMPLES>
 
-    # three({'hello':'hola', 'thank you':'gracias'}) → {'hola':'hello', 'gracis':'thank you'}
+    # three({'hello':'hola', 'thank you':'gracias'}) → {'hola':'hello', 'gracias':'thank you'}
     # three({101:'Optimisation', 102:'Partial ODEs'}) → {'Optimisation':101, 'Partial ODEs':102}
 
     # <HINT>
@@ -47,7 +60,14 @@ def two(total_seconds):
     # Dictionaries have methods that can be used to get their keys, values, or items
 
 def three(dictionary):
-    pass
+    new_dict = {}
+
+    for key in dictionary:
+        value = dictionary[key]
+
+        new_dict[value] = key
+
+    return new_dict
 
     # <QUESTION 4>
 
@@ -64,17 +84,66 @@ def three(dictionary):
     # four(-10) → 5
 
 def four(number):
-    pass
+    for x in range(abs(number)//2, 0, -1):
+        if number%x == 0:
+            return x     
 
     # <QUESTION 5>
 
-    # Given an string of characters, return the character with the lowest ASCII value
+    # Given a string of characters, return the character with the lowest ASCII value
 
     # <EXAMPLES>
 
     # five('abcdef') → 'a'
-    # four('LoremIpsum') → 'I'
-    # four('hello world!') → ' '
+    # five('LoremIpsum') → 'I'
+    # five('hello world!') → ' '
 
 def five(chars):
-    pass
+    asc = 100000
+
+    for char in chars:
+        asc1 = ord(char)
+
+        if asc1 < asc: 
+            asc = asc1
+
+    return chr(asc)
+
+    # <QUESTION 6>
+
+    # Given a paragraph of text and an integer, break the paragraph into "pages" (a list of strings), where the
+    # length of each page is less than the given integer
+
+    # Don't break words up across pages!
+
+    # <EXAMPLES>
+
+    # six('hello world, how are you?', 12) → ['hello world,', 'how are you?']
+    # six('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 20) → ['Lorem Ipsum is', 'simply dummy text of', 'the printing and', 'typesetting', 'industry.']
+
+def six(paragraph, limit):
+
+    words = paragraph.split()
+    pages = []
+    
+    current_page = ''
+    for word in words:
+
+        if current_page == '': new_text = word
+        else: new_text = f'{current_page} {word}'
+
+        if len(new_text) > limit:
+
+            if current_page != '': 
+                pages.append(current_page)
+
+            current_page = ''
+            new_text = word
+
+        current_page = new_text
+
+    pages.append(current_page)
+
+    return pages
+
+print(six('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 20))
