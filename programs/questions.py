@@ -86,7 +86,9 @@ def three(dictionary):
 def four(number):
     for x in range(abs(number)//2, 0, -1):
         if number%x == 0:
-            return x     
+            return x
+    else:
+        return 1  
 
     # <QUESTION 5>
 
