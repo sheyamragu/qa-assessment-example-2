@@ -1,9 +1,9 @@
-from programs import one, two, three, four, five, six
+from programs.questions import one, two, three, four, five, six
 
 def test_one():
     assert one("hello world", "aeiou") == "h_ll_ w_rld"
     assert one("didgeridoo", "do") == "_i_geri___"
-    assert one("punctation, or something?", " ,?") == "punctuation__or_something_"
+    assert one("punctuation, or something?", " ,?") == "punctuation__or_something_"
 
 def test_two():
     assert two(270) == (0, 0, 4, 30)
@@ -24,8 +24,8 @@ def test_four():
 
 def test_five():
     assert five('abcdef') == 'a'
-    assert four('LoremIpsum') == 'I'
-    assert four('hello world!') == ' '
+    assert five('LoremIpsum') == 'I'
+    assert five('hello world!') == ' '
 
 def test_six():
     assert six('hello world, how are you?', 12) == ['hello world,', 'how are you?']
